@@ -1,45 +1,110 @@
-﻿US Healthcare Payment Integrity Analysis 🏥📊
- 
-Project Overview
-This project focuses on analyzing Medicare Inpatient Payment data to evaluate hospital billing behaviors and payment integrity. By integrating financial records with hospital quality metrics and diagnostic details, we identified significant discrepancies in how healthcare services are billed across the United States.
+# Payment Integrity Case Study – README
 
-Data Architecture & Linking
-The analysis was built by integrating three primary datasets to provide a holistic view of the healthcare landscape:
+## 1. Objective
 
-T1 (Inpatient Payments): Contains financial records of hospital-submitted charges and actual Medicare payments.
+The objective of this case study is to analyze US healthcare payment data and identify potential inefficiencies, billing gaps, and patterns across DRGs, states, and hospital types.
 
-T2 (DRG Details): Provides clinical context for Diagnosis Related Groups, including complexity weights.
+---
 
-T3 (Provider Info): Includes hospital metadata such as ownership types (Private/Govt) and CMS quality star ratings.
+## 2. Datasets Used
 
-Relationship Strategy: The tables were linked using a 1-to-many data model. T1 was connected to T2 via DRG_Cd and to T3 via the Facility ID (CCN).
+The analysis was performed using the following datasets:
 
-Key Performance Indicators (KPIs) 📈
-The following metrics were tracked in the executive dashboard to measure financial risk and operational volume:
+* Provider / Hospital Data
+* DRG (Diagnosis Related Group) Data
+* State-wise Aggregated Data
 
-Total Billing Gap: $9.82 Billion (The total difference between what hospitals charged and what Medicare actually paid).
+---
 
-Total Discharges: 7 Million (Total volume of Medicare patients represented in the dataset).
+## 3. Tools & Technologies
 
-Avg Charge Ratio: 1.10M (Sum) - A metric used to identify "Billing Aggression" by calculating how many times higher a hospital's charge is compared to the Medicare payment.
+* Excel (Data Cleaning, Pivot Tables, Dashboard)
+* Power BI (Visualization – if used)
+* SQL / Python (if applicable)
 
-Medicare Coverage %: Calculated as (Avg_Medicare_Payment / Avg_Total_Payment) to determine the percentage of costs absorbed by the Medicare program.
+---
 
-Core Findings
-Top Paying DRGs: Procedures under DRG 853 and DRG 3 were identified as the highest revenue generators for providers.
+## 4. Data Cleaning Steps
 
-Geographic Variation: Significant payment trends were observed in high-volume states such as Texas (TX), Florida (FL), and New York (NY).
+* Handled missing values using appropriate methods (mean/median/imputation)
+* Removed duplicates
+* Standardized column formats (dates, currency, etc.)
+* Validated data consistency across tables
 
-Ownership Impact: The majority of providers are classified as Voluntary Non-Profit - Private institutions.
+---
 
-Surprise Finding (Task 04): Quality vs. Billing – The analysis revealed a negative correlation between hospital quality and billing aggression. 1-star hospitals (lowest quality) maintain a higher average charge ratio (5.63x) compared to 5-star hospitals (5.14x).
+## 5. Key Metrics Analyzed
 
-Strategic Recommendation
-Audit and oversight efforts should prioritize 1-2 star For-profit hospitals. Despite representing only 6.3% of providers, this segment carries the highest combined risk of aggressive billing and low clinical quality.
+* Total Discharges (Tot_Dschrgs)
+* Billing Gap
+* Charge Ratio
+* DRG-wise payments
+* State-wise distribution
+* Ownership type analysis
 
-Project Tools
-Excel: Data visualization, KPI dashboarding, and pivot tables.
+---
 
-Power BI: Data modeling and relationship mapping.
+## 6. Key Insights
 
-Python: Initial data cleaning, merging, and exploratory data analysis (EDA)
+### 🔹 Insight 1: High Billing Gap
+
+* Total billing gap observed: **9.82 Billion**
+* Indicates potential overbilling or inefficiencies in payment processing
+
+### 🔹 Insight 2: Top Paying DRGs
+
+* DRG codes such as **853, 3, 870** contribute highest payments
+* These DRGs should be audited for accuracy
+
+### 🔹 Insight 3: State-Level Trends
+
+* States like **CA, NY, DC** show higher contribution
+* Suggests regional cost variation or billing patterns
+
+### 🔹 Insight 4: Ownership Type Impact
+
+* Private non-profit hospitals show highest provider count
+* Indicates dominance in healthcare delivery
+
+---
+
+## 7. Dashboard Explanation
+
+The dashboard includes:
+
+* Top Paying DRG visualization
+* State-wise distribution (Pie Chart)
+* KPI cards (Discharges, Billing Gap, Charge Ratio)
+* Ownership type analysis
+* Filters: State, Hospital Type
+
+---
+
+## 8. Business Recommendations
+
+* Focus audit on high-value DRGs
+* Investigate states with high billing gaps
+* Monitor private hospital billing patterns
+* Implement stricter payment validation rules
+
+---
+
+## 9. Additional Finding (Own Analysis)
+
+One interesting observation:
+
+* Certain DRGs have disproportionately high payments compared to discharge count, indicating possible pricing inefficiencies.
+
+---
+
+## 10. Conclusion
+
+This analysis highlights key areas where payment integrity can be improved through better monitoring, auditing, and data-driven decision making.
+
+---
+
+## 11. Author
+
+Arun S
+Data Analyst Aspirant
+Coimbatore, Tamil Nadu
